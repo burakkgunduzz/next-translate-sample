@@ -1,0 +1,26 @@
+{
+  "name": "next-translate-sample",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.1",
+    "eslint": "8.15.0",
+    "eslint-config-next": "13.1.1",
+    "next": "13.1.1",
+    "next-translate": "2.0.5",
+    "next-translate-plugin": "2.0.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "11.7.3"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/alperalin/next-translate-sample.git",
+  "author": "Alper ALIN <alperalin@gmail.com>",
+  "license": "MIT"
+}
