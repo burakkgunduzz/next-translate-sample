@@ -3,11 +3,14 @@ import Head from 'next/head';
 import styles from '../../../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import useTranslation from 'next-translate/useTranslation';
+import Link from 'next/link';
 
 function Product() {
 	const router = useRouter();
 	const { id } = router.query;
 	const [data, setData] = useState({});
+	const { t } = useTranslation('common');
 
 	useEffect(() => {
 		if (id)
@@ -25,11 +28,20 @@ function Product() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className={styles.main}>
-				<div>
-					<h1>{data?.title}</h1>
-					<p>{data?.description}</p>
-					<span>{data?.price}</span>
+			<main className={`${styles.main} ${styles.productPage}`}>
+				<div className={styles.description}>
+					<Link href="/" className={styles.button}>
+						Homepage
+					</Link>
+					<h1>{t('productTitle')}</h1>
+				</div>
+
+				<div className="">
+					<div className={styles.product}>
+						<h1>{data?.title}</h1>
+						<p>{data?.description}</p>
+						<span>{data?.price}</span>
+					</div>
 				</div>
 			</main>
 		</>

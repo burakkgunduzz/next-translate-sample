@@ -5,11 +5,13 @@ import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 	const [data, setData] = useState([]);
+	const { t } = useTranslation('common');
 
 	useEffect(() => {
 		axios
@@ -28,6 +30,7 @@ export default function Home() {
 			</Head>
 			<main className={styles.main}>
 				<div className={styles.description}>
+					<h1>{t('title')}</h1>
 					<p>
 						Get started by editing&nbsp;
 						<code className={styles.code}>pages/index.js</code>
